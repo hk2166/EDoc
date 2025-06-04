@@ -126,7 +126,7 @@ const HospitalFinder: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <LoadingSpinner size="large" label={t('common.loading')} />
+        <LoadingSpinner size="large\" label={t('common.loading')} />
       </div>
     );
   }
