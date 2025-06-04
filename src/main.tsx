@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 // Register service worker
 if ('serviceWorker' in navigator) {
@@ -24,7 +25,9 @@ if (!rootElement) {
   try {
     createRoot(rootElement).render(
       <StrictMode>
-        <App />
+        <ErrorBoundary>
+          <App />
+        </ErrorBoundary>
       </StrictMode>
     );
   } catch (error) {
