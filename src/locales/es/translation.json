@@ -1,0 +1,170 @@
+{
+  "app": {
+    "name": "Health Edge",
+    "tagline": "Diagnóstico médico con IA",
+    "description": "Utilice IA avanzada para analizar síntomas, imágenes y datos de sensores para diagnósticos médicos preliminares."
+  },
+  
+  "common": {
+    "back": "Atrás",
+    "next": "Siguiente",
+    "cancel": "Cancelar",
+    "submit": "Enviar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "loading": "Cargando...",
+    "retry": "Reintentar",
+    "offline": "Estás desconectado",
+    "close": "Cerrar",
+    "share": "Compartir",
+    "search": "Buscar",
+    "edit": "Editar",
+    "settings": "Configuración",
+    "privacy": "Privacidad",
+    "disclaimer": "Aviso Médico",
+    "offlineMessage": "Actualmente estás sin conexión. Algunas funciones pueden estar limitadas.",
+    "errorMessage": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "yes": "Sí",
+    "no": "No",
+    "continue": "Continuar",
+    "moreInfo": "Más información",
+    "language": "Idioma",
+    "theme": "Tema",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro",
+    "systemMode": "Predeterminado del sistema",
+    "required": "Obligatorio"
+  },
+  
+  "auth": {
+    "signIn": "Iniciar Sesión",
+    "signOut": "Cerrar Sesión",
+    "signUp": "Crear Cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "resetPassword": "Restablecer Contraseña",
+    "privacyNotice": "Tus datos se almacenan de forma segura en tu dispositivo",
+    "accountCreated": "Cuenta creada exitosamente",
+    "signInPrompt": "Inicia sesión para guardar tu información médica",
+    "guest": "Continuar como Invitado"
+  },
+  
+  "home": {
+    "welcomeMessage": "¿Cómo podemos ayudarte hoy?",
+    "startDiagnosis": "Iniciar Sesión de Diagnóstico",
+    "viewHistory": "Ver Historial Médico",
+    "symptoms": "Verificar Síntomas",
+    "camera": "Usar Cámara",
+    "voice": "Grabación de Voz",
+    "recentSessions": "Sesiones Recientes",
+    "emergencyResources": "Recursos de Emergencia",
+    "nearbyClinic": "Encontrar Clínica Cercana",
+    "newDiagnosis": "Nuevo Diagnóstico",
+    "talkToDoctor": "Hablar con un Médico",
+    "offlineNotice": "La aplicación está en modo sin conexión",
+    "searchSymptoms": "Buscar síntomas..."
+  },
+  
+  "diagnosis": {
+    "startPrompt": "Por favor describe tus síntomas o preocupación médica",
+    "addSymptom": "Añadir un Síntoma",
+    "uploadImage": "Subir Imagen",
+    "recordAudio": "Grabar Audio",
+    "recordingInstructions": "Graba tu tos o respiración para análisis",
+    "symptomsQuestion": "¿Qué síntomas estás experimentando?",
+    "durationQuestion": "¿Cuánto tiempo has tenido estos síntomas?",
+    "severityQuestion": "Califica la severidad de tus síntomas",
+    "symptomsHistory": "¿Has experimentado estos síntomas antes?",
+    "recordCough": "Grabar Tos",
+    "recordBreathing": "Grabar Respiración",
+    "takePicture": "Tomar una Foto",
+    "bodyLocationPrompt": "Selecciona el área afectada",
+    "additionalInfo": "Información Adicional",
+    "selectType": "Selecciona método de diagnóstico",
+    "viewResults": "Ver Resultados",
+    "processing": "Procesando tu información...",
+    "disclaimer": "Esto no es un diagnóstico médico. Siempre consulta a un profesional de la salud.",
+    "emergencyWarning": "Si estás experimentando síntomas graves, busca atención médica inmediata.",
+    "scanInstructions": "Asegúrate de tener buena iluminación y mantén la cámara estable",
+    "textInputLabel": "Describe tus síntomas o preocupaciones",
+    "languageSelect": "Seleccionar idioma",
+    "imageFailed": "Error al capturar la imagen. Inténtalo de nuevo.",
+    "audioFailed": "Error al grabar el audio. Inténtalo de nuevo.",
+    "selectBodyPart": "Seleccionar parte del cuerpo",
+    "severity": {
+      "mild": "Leve",
+      "moderate": "Moderado",
+      "severe": "Grave"
+    },
+    "duration": {
+      "today": "Comenzó hoy",
+      "days": "Días",
+      "weeks": "Semanas",
+      "months": "Meses",
+      "chronic": "Crónico (largo plazo)"
+    },
+    "bodyParts": {
+      "head": "Cabeza",
+      "chest": "Pecho",
+      "abdomen": "Abdomen",
+      "back": "Espalda",
+      "arms": "Brazos",
+      "legs": "Piernas",
+      "skin": "Piel",
+      "other": "Otro"
+    },
+    "imageCapture": {
+      "title": "Captura de Imagen",
+      "instruction": "Toma una foto clara del área afectada",
+      "retake": "Volver a tomar"
+    },
+    "audioCapture": {
+      "title": "Grabación de Audio",
+      "instruction": "Graba tu tos o patrón de respiración",
+      "start": "Iniciar Grabación",
+      "stop": "Detener Grabación",
+      "seconds": "segundos"
+    },
+    "textInput": {
+      "title": "Descripción de Síntomas",
+      "instruction": "Describe tus síntomas en detalle",
+      "placeholder": "ej., He tenido tos seca persistente durante 3 días, junto con fiebre leve..."
+    }
+  },
+  
+  "results": {
+    "title": "Resultados del Diagnóstico",
+    "analyzedAt": "Analizado el",
+    "possibleConditions": "Posibles Condiciones",
+    "recommendedActions": "Acciones Recomendadas",
+    "emergencyNotice": "BUSCA ATENCIÓN MÉDICA INMEDIATAMENTE",
+    "highUrgency": "Alta urgencia - consulta a un médico pronto",
+    "mediumUrgency": "Urgencia media - monitorea y busca atención si empeora",
+    "lowUrgency": "Baja urgencia - puede tratarse en casa",
+    "probability": "Probabilidad",
+    "confidence": "Confianza de la IA",
+    "seeMore": "Ver más",
+    "icdCode": "Código ICD-11",
+    "commonSymptoms": "Síntomas comunes",
+    "learnMore": "Más información",
+    "findNearby": "Encontrar atención médica cercana",
+    "sharePDF": "Compartir como PDF",
+    "saveResults": "Guardar Resultados",
+    "nearbyFacilities": "Centros de Salud Cercanos",
+    "distanceAway": "a {{distance}} km",
+    "treatmentOptions": "Opciones de Tratamiento",
+    "costEffectiveness": "Costo vs. Efectividad",
+    "drugInteractions": "Posibles Interacciones Medicamentosas",
+    "disclaimer": "Esto no es un diagnóstico médico definitivo. La información proporcionada se basa en análisis de IA y debe ser verificada por un profesional de la salud.",
+    "references": "Referencias Médicas",
+    "accuracy": "Precisión del Diagnóstico",
+    "severity": {
+      "low": "Gravedad baja",
+      "medium": "Gravedad media",
+      "high": "Gravedad alta",
+      "emergency": "Emergencia médica"
+    }
+  }
+}
