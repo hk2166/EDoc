@@ -61,7 +61,7 @@ const ResultsPage: React.FC = () => {
     return (
       <div className="container-padding mx-auto max-w-4xl py-12">
         <div className="text-center py-16">
-          <LoadingSpinner size="large" label={t('diagnosis.processing')} />
+          <LoadingSpinner size="large\" label={t('diagnosis.processing')} />
           <p className="text-neutral-600 mt-6">
             Our AI is analyzing your symptoms and data...
           </p>
