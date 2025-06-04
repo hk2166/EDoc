@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
-import { Guitar as Hospital, MapPin, Phone, Clock, Navigation2 } from 'lucide-react';
+import { MapPin, Phone, Clock, Navigation2 } from 'lucide-react';
 import Button from '../common/Button';
 import LoadingSpinner from '../common/LoadingSpinner';
 
@@ -10,7 +10,7 @@ import LoadingSpinner from '../common/LoadingSpinner';
 import 'leaflet/dist/leaflet.css';
 
 interface Hospital {
-  id?: string;
+  id: string;
   name: string;
   lat: number;
   lon: number;
@@ -47,8 +47,14 @@ const HospitalFinder: React.FC = () => {
         setUserLocation([latitude, longitude]);
 
         try {
+          // Use environment variable for API key
+          const apiKey = import.meta.env.VITE_GEOAPIFY_API_KEY;
+          if (!apiKey) {
+            throw new Error('Geoapify API key not found');
+          }
+
           const response = await fetch(
-            `https://api.geoapify.com/v2/places?categories=healthcare.hospital,healthcare.pharmacy&filter=circle:${longitude},${latitude},5000&limit=10&apiKey=0498be4575c34edbaac783c87421eb21`
+            `https://api.geoapify.com/v2/places?categories=healthcare.hospital,healthcare.clinic,healthcare.pharmacy&filter=circle:${longitude},${latitude},5000&limit=10&apiKey=${apiKey}`
           );
 
           if (!response.ok) {
@@ -56,17 +62,17 @@ const HospitalFinder: React.FC = () => {
           }
 
           const data = await response.json();
-          console.log(data); // Debugging API response
           
           const formattedHospitals = data.features
-            .filter((feature: any) => feature.properties.lat && feature.properties.lon && feature.properties.name)
+            .filter((feature: any) => feature.properties.lat && feature.properties.lon)
             .map((feature: any) => ({
-              name: feature.properties.name,
+              id: feature.properties.place_id,
+              name: feature.properties.name || 'Unknown Healthcare Facility',
               lat: feature.properties.lat,
               lon: feature.properties.lon,
-              address: feature.properties.formatted,
+              address: feature.properties.formatted || feature.properties.address_line1 || 'Address unavailable',
               phone: feature.properties.phone,
-              type: feature.properties.categories[0].split('.')[1],
+              type: getHealthcareType(feature.properties.categories),
               distance: calculateDistance(
                 latitude,
                 longitude,
@@ -78,6 +84,7 @@ const HospitalFinder: React.FC = () => {
 
           setHospitals(formattedHospitals);
         } catch (err) {
+          console.error('Error fetching hospitals:', err);
           setError(err instanceof Error ? err.message : 'Failed to fetch hospitals');
         } finally {
           setLoading(false);
@@ -89,6 +96,13 @@ const HospitalFinder: React.FC = () => {
       }
     );
   }, []);
+
+  // Helper function to determine healthcare facility type
+  const getHealthcareType = (categories: string[]): Hospital['type'] => {
+    if (categories.includes('healthcare.hospital')) return 'hospital';
+    if (categories.includes('healthcare.clinic')) return 'clinic';
+    return 'pharmacy';
+  };
 
   // Calculate distance between two points using Haversine formula
   const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
@@ -112,7 +126,7 @@ const HospitalFinder: React.FC = () => {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <LoadingSpinner size="large\" label={t('common.loading')} />
+        <LoadingSpinner size="large" label={t('common.loading')} />
       </div>
     );
   }
@@ -155,27 +169,23 @@ const HospitalFinder: React.FC = () => {
             </Marker>
 
             {/* Hospital markers */}
-            {hospitals.length === 0 ? (
-              <p className="text-neutral-500">No healthcare facilities found nearby.</p>
-            ) : (
-              hospitals.map((hospital, index) => (
-                <Marker
-                  key={index}
-                  position={[hospital.lat, hospital.lon]}
-                  icon={hospitalIcon}
-                  eventHandlers={{
-                    click: () => setSelectedHospital(hospital)
-                  }}
-                >
-                  <Popup>
-                    <div className="min-w-[200px]">
-                      <h3 className="font-medium text-neutral-800">{hospital.name}</h3>
-                      <p className="text-sm text-neutral-600">{hospital.address}</p>
-                    </div>
-                  </Popup>
-                </Marker>
-              ))
-            )}
+            {hospitals.map((hospital) => (
+              <Marker
+                key={hospital.id}
+                position={[hospital.lat, hospital.lon]}
+                icon={hospitalIcon}
+                eventHandlers={{
+                  click: () => setSelectedHospital(hospital)
+                }}
+              >
+                <Popup>
+                  <div className="min-w-[200px]">
+                    <h3 className="font-medium text-neutral-800">{hospital.name}</h3>
+                    <p className="text-sm text-neutral-600">{hospital.address}</p>
+                  </div>
+                </Popup>
+              </Marker>
+            ))}
           </MapContainer>
         </div>
       )}
@@ -192,14 +202,15 @@ const HospitalFinder: React.FC = () => {
         </div>
 
         <div className="space-y-4">
-          {hospitals.map((hospital, index) => (
+          {hospitals.map((hospital) => (
             <div
-              key={index}
+              key={hospital.id}
               className={`p-4 rounded-lg border ${
-                selectedHospital?.name === hospital.name
+                selectedHospital?.id === hospital.id
                   ? 'border-primary-500 bg-primary-50'
                   : 'border-neutral-200 hover:border-primary-300'
-              }`}
+              } cursor-pointer transition-colors`}
+              onClick={() => setSelectedHospital(hospital)}
             >
               <div className="flex items-start justify-between">
                 <div>
