@@ -10,12 +10,13 @@ import LoadingSpinner from '../common/LoadingSpinner';
 import 'leaflet/dist/leaflet.css';
 
 interface Hospital {
+  id?: string;
   name: string;
   lat: number;
   lon: number;
   address: string;
   phone?: string;
-  type: string;
+  type: 'hospital' | 'clinic' | 'pharmacy';
   distance?: number;
   openingHours?: string;
 }
