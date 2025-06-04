@@ -1,0 +1,97 @@
+{
+  "app": {
+    "name": "HealthEdge",
+    "tagline": "Diagnostics médicaux par IA pour tous"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "offline": "Vous êtes hors ligne. Certaines fonctionnalités peuvent être limitées.",
+    "next": "Suivant",
+    "back": "Retour",
+    "cancel": "Annuler",
+    "submit": "Soumettre",
+    "save": "Enregistrer",
+    "error": "Une erreur s'est produite",
+    "success": "Succès",
+    "tryAgain": "Réessayer"
+  },
+  "home": {
+    "welcome": "Bienvenue sur HealthEdge",
+    "description": "Diagnostics médicaux privés utilisant la caméra et le microphone de votre appareil",
+    "startDiagnosis": "Commencer le diagnostic",
+    "viewResources": "Voir les ressources",
+    "privacyNote": "Toutes les données restent sur votre appareil. Rien n'est envoyé au cloud.",
+    "features": {
+      "title": "Comment ça marche",
+      "imageAnalysis": "Analyse d'image",
+      "imageDesc": "Prenez des photos pour analyser les affections cutanées, les problèmes oculaires ou les plaies",
+      "audioAnalysis": "Analyse audio",
+      "audioDesc": "Enregistrez votre respiration ou votre toux pour vérifier les problèmes respiratoires",
+      "textInput": "Description des symptômes",
+      "textDesc": "Décrivez vos symptômes dans votre propre langue",
+      "offlineSupport": "Fonctionne hors ligne",
+      "offlineDesc": "Fonctionnalité complète sans connexion internet"
+    }
+  },
+  "diagnosis": {
+    "title": "Diagnostic",
+    "selectType": "Sélectionnez ce que vous souhaitez analyser",
+    "imageCapture": {
+      "title": "Analyse d'image",
+      "instruction": "Positionnez la zone concernée dans le cadre et prenez une photo claire",
+      "capture": "Capturer",
+      "retake": "Reprendre"
+    },
+    "audioCapture": {
+      "title": "Analyse audio",
+      "instruction": "Enregistrez un échantillon de votre respiration ou de votre toux",
+      "start": "Démarrer l'enregistrement",
+      "stop": "Arrêter l'enregistrement",
+      "seconds": "secondes"
+    },
+    "textInput": {
+      "title": "Description des symptômes",
+      "instruction": "Décrivez vos symptômes en détail",
+      "placeholder": "Par exemple: J'ai mal à la tête depuis 3 jours avec de la fièvre..."
+    },
+    "processing": "Traitement de vos données...",
+    "viewResults": "Voir les résultats"
+  },
+  "results": {
+    "title": "Résultats du diagnostic",
+    "disclaimer": "Ceci ne remplace pas un avis médical professionnel",
+    "summary": "Résumé",
+    "possibleConditions": "Conditions possibles",
+    "urgencyLevel": "Niveau d'urgence",
+    "urgency": {
+      "low": "Faible - Surveiller les symptômes",
+      "medium": "Moyen - Consulter un professionnel de santé quand possible",
+      "high": "Élevé - Consulter rapidement un médecin",
+      "emergency": "Urgence - Consulter immédiatement un médecin"
+    },
+    "recommendations": "Recommandations",
+    "saveResults": "Enregistrer les résultats",
+    "findClinic": "Trouver une clinique à proximité"
+  },
+  "profile": {
+    "title": "Votre profil",
+    "language": "Langue",
+    "savedResults": "Résultats enregistrés",
+    "noSavedResults": "Pas encore de résultats enregistrés",
+    "deleteData": "Supprimer toutes les données",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer toutes vos données ? Cette action est irréversible."
+  },
+  "resources": {
+    "title": "Ressources de santé",
+    "emergencyContacts": "Contacts d'urgence",
+    "nearbyFacilities": "Établissements de santé à proximité",
+    "offlineAccess": "Disponible hors ligne",
+    "generalGuidelines": "Directives générales de santé"
+  },
+  "footer": {
+    "privacyPolicy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "about": "À propos",
+    "version": "Version 0.1.0"
+  }
+}

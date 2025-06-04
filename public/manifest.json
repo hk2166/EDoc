@@ -1,0 +1,45 @@
+{
+  "short_name": "Health Edge",
+  "name": "Health Edge - AI Medical Diagnostics",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#0EA5E9",
+  "background_color": "#ffffff",
+  "description": "AI-powered medical diagnostics for healthcare professionals and patients",
+  "orientation": "portrait",
+  "categories": ["health", "medical", "healthcare"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Start Diagnosis",
+      "short_name": "Diagnose",
+      "description": "Start a new diagnostic session",
+      "url": "/diagnosis",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Medical History",
+      "short_name": "History",
+      "description": "View your medical history",
+      "url": "/history",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ]
+}
